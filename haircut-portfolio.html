@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="reffrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haircut Portfolio</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 1px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 20px;
+      padding: 0px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      background-color: #fff;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .portfolio-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .portfolio-item {
+      width: 300px;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .portfolio-item h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    .portfolio-item p {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-item a {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .portfolio-item a:hover {
+      background-color: #555;
+    }
+
+    .portfolio-item a:active {
+      background-color: #777;
+    }
+
+    footer {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 0px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="haircut-portfolio.html">Haircut portfolio</a></li>
+        <li><a href="appointments.html">Apponitments</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+  <br>
+  <div class="portfolio-container">
+    <div class="portfolio-item">
+      <img src="haircut1.jpg" alt="Haircut 1">
+      <h3>Haircut Style 1</h3>
+      <p>Customer: John Doe</p>
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="haircut2.jpg" alt="Haircut 2">
+      <h3>Haircut Style 2</h3>
+      <p>Customer: Jane Smith</p>
+      <p>Description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+    </div>
+    <!-- Add more portfolio items as needed -->
+  </div>
+  <footer>
+    <p>&copy; Quinas haircuts all rights reserved.</p>
+  </footer>
+</body>
+</html>

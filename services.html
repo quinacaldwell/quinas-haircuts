@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="reffrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>services</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 4px;
+      padding: 4px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    h2 {
+      color: #000;
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin-left: 20px;
+    }
+
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
+    }
+
+    footer {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 0px;
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+    }
+  </style>
+</head>    
+
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="haircut-portfolio.html">Haircut portfolio</a></li>
+            <li><a href="appointments.html">Appointments</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </nav>
+      </header>
+      <br>
+      <section id="services">
+        <h2>Our Services</h2>
+        <p>
+          At quinas mobile barbering, we offer a variety of 
+          hair and beard services such as haircuts and shaves,
+          beard trims, and facial cleans. we also do locs,
+          braids and womens and childerens haircuts and hairstyles.
+        </p>
+        <p>
+          We offer a range of services to meet your needs. Our prices
+          vary depending on the type and duration of the service. Please 
+          refer to our pricing list below or visit our Setmore account to 
+          view detailed pricing information for each service.
+        </p>
+        <p>
+          To book an appointment, simply follow these steps:
+        </p>
+        <ol>
+          <li>Select the service you're interested in.</li>
+          <li>Choose a date and time that works best for you.</li>
+          <li>Fill out the required information, including your name and contact details.</li>
+          <li>Click "Book Appointment" to confirm your booking.</li>
+        </ol>
+        
+        <p>
+          If you have any questions or need further assistance, please don't hesitate to contact us. We look forward to serving you!
+        </p>
+        <ul>
+          <li>Men's Haircut: $25</li>
+          <li>Beard Trim: $25</li>
+          <li>Shave: $30</li>
+          <li>Kids Haircut: $15</li>
+          <li>Braids: $40</li>
+          <li>Locs: $50</li>
+          <li>Womens Haircut: $25</li>
+        </ul>
+        <p>
+          Book and appointment with us today!
+        </p>
+      </section>
+      <h2>Barber Availability</h2>
+      <section>
+      <div id="barber-availability"></div>
+      <script>
+        // Assume you have an array of barber availability status
+        const barberAvailability = [
+          { name: 'Barber 1', available: true },
+          { name: 'Barber 2', available: false },
+          { name: 'Barber 3', available: true },
+        ];
+        
+        // Function to update the barber availability status
+        function updateBarberAvailability() {
+          const availabilityContainer = document.getElementById('barber-availability');
+        
+          // Clear the container
+          availabilityContainer.innerHTML = '';
+        
+          // Loop through the barber availability data and create a status element for each barber
+          barberAvailability.forEach(barber => {
+            const statusElement = document.createElement('p');
+            statusElement.textContent = `${barber.name}: ${barber.available ? 'Available' : 'Not Available'}`;
+            availabilityContainer.appendChild(statusElement);
+          });
+        }
+        
+        // Call the updateBarberAvailability function initially and whenever the availability data changes
+        updateBarberAvailability();
+      </script>
+      </section>
+      <h2>Book an appointment</h2>
+      <div id="setmore_widget"></div>
+      <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js">
+      </script><a style="float:none; " id="Setmore_button_iframe"  href="https://booking.setmore.com/scheduleappointment/5f52ecf2-ab94-4abd-a929-4a758568b8ec">
+      <img border="none" src="https://storage.googleapis.com/full-assets/setmore/images/1.0/Settings/book-now-blue.svg" alt="Book an appointment with Quina Caldwell using Setmore"/></a>
+      <footer>
+        <p>&copy; Quinas haircuts all rights reserved.</p>
+      </footer>      
+</body>
+</html>

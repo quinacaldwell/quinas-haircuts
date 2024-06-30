@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Newsletter</title>
+  <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #fff;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        padding: 1px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 20px;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .newsletter-container {
+        max-width: 400px;
+        margin: auto;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 5px;
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: #008080;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #008080;
+      }
+
+      #response-message {
+        margin-top: 10px;
+      }
+
+      footer {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 0px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="haircut-portfolio.html">Haircut portfolio</a></li>
+        <li><a href="appointments.html">Apponitments</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+  <br>
+  <div class="newsletter-container">
+    <h2>Subscribe to Our Newsletter</h2>
+    <div class="content-container">
+        <h1>Welcome to Quinas haircuts</h1>
+        <p>Discover the latest trends, exclusive promotions, and expert grooming tips by subscribing to our newsletter. Join our growing community of satisfied customers who enjoy the following benefits:</p>
+        <ul>
+          <li><strong>Stay Informed:</strong> Be the first to know about our newest services, styles, and products.</li>
+          <li><strong>Exclusive Offers:</strong> Receive special discounts and promotions available only to our newsletter subscribers.</li>
+          <li><strong>Grooming Tips and Tricks:</strong> Get expert advice on maintaining your look between visits with tips from our skilled barbers.</li>
+          <li><strong>Event Updates:</strong> Stay informed about upcoming events, workshops, and community activities hosted by [Your Barber Shop Name].</li>
+        </ul>  
+        <p>Don't miss out on the latest updates from Quinas haircuts. Subscribe now and elevate your grooming experience!</p>
+    </div>    
+    <form id="newsletter-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <button type="submit" onclick="submitForm()">Subscribe</button>
+    </form>
+    <p id="response-message"></p>
+</div>
+<footer>
+  <p>&copy; Quinas haircuts all rights reserved.</p>
+</footer>
+</body>
+</html>

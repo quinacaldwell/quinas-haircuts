@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="noreferrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments</title>
+  <style>
+     header {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 1px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 20px;
+      padding: 0px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.scheduler-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+  text-align: center;
+  color: #000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #000;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #fff;
+      color: #000;
+      text-align: center;
+      padding: 0px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="haircut-portfolio.html">Haircut portfolio</a></li>
+        <li><a href="appointments.html">Apponitments</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+  <br>
+  <div class="scheduler-container">
+    <h2>Appointment Scheduler</h2>
+    <form id="appointment-form">
+      <label for="dateTime">Select Date and Time:</label>
+      <input type="datetime-local" id="dateTime" name="dateTime" required>
+      <button type="button" onclick="scheduleAppointment()">Schedule Appointment</button>
+    </form>
+
+    <div id="schedule-list">
+      <h3>Scheduled Appointments</h3>
+      <ul id="appointments"></ul>
+    </div>
+  </div>
+
+  <script src="script.js">
+    // Function to send appointment data to the server
+function scheduleAppointment() {
+  const dateTimeInput = document.getElementById("dateTime");
+  const dateTime = dateTimeInput.value;
+
+  // Send appointment data to the server
+  fetch('/api/appointments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ dateTime }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert("Appointment scheduled successfully!");
+        updateScheduledAppointments();
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+  // Clear the form input
+  dateTimeInput.value = "";
+}
+
+// Function to retrieve scheduled appointments from the server
+function updateScheduledAppointments() {
+  // Fetch appointments from the server
+  fetch('/api/appointments')
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        const appointmentsList = document.getElementById("appointments");
+        appointmentsList.innerHTML = "";
+
+        data.appointments.forEach(appointment => {
+          const listItem = document.createElement("li");
+          listItem.textContent = appointment.dateTime;
+          appointmentsList.appendChild(listItem);
+        });
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+  </script>
+  <footer>
+    <p>&copy; Quinas haircuts all rights reserved.</p>
+  </footer>
+</body>
+</html>
